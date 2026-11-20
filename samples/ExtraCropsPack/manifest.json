@@ -1,0 +1,11 @@
+{
+  "UniqueID": "Minimal.ExtraCropsPack",
+  "Name": "Extra Crops Content Pack",
+  "Author": "MinimalModLoader Demo",
+  "Version": "1.0.0",
+  "Description": "Pure JSON content pack adding Ancient Fruit and Sweet Gem Berry without writing any C# code.",
+  "ContentPackFor": {
+    "UniqueID": "Minimal.CropBonusMod",
+    "MinimumVersion": "1.0.0"
+  }
+}

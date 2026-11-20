@@ -1,0 +1,16 @@
+{
+  "UniqueID": "Minimal.GreetingMod",
+  "Name": "Greeting Override Mod",
+  "Author": "MinimalModLoader Demo",
+  "Version": "1.0.0",
+  "Description": "Replaces Strings/Greeting from a mod asset file and calls CropBonusMod via duck-typed inter-mod API.",
+  "MinimumLoaderVersion": "1.0.0",
+  "EntryDll": "GreetingMod.dll",
+  "Dependencies": [
+    {
+      "UniqueID": "Minimal.CropBonusMod",
+      "MinimumVersion": "1.0.0",
+      "IsRequired": true
+    }
+  ]
+}

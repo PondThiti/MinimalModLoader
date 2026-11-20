@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MinimalModLoader.Runner</RootNamespace>
+    <AssemblyName>MinimalModLoader.Runner</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MinimalModLoader.Abstractions\MinimalModLoader.Abstractions.csproj" />
+    <ProjectReference Include="..\MinimalModLoader.Core\MinimalModLoader.Core.csproj" />
+    <ProjectReference Include="..\MinimalModLoader.GameHost\MinimalModLoader.GameHost.csproj" />
+
+    <!-- Ensure sample mods build before Runner without referencing them as static compile-time assemblies -->
+    <ProjectReference Include="..\..\samples\CropBonusMod\CropBonusMod.csproj" ReferenceOutputAssembly="false" Private="false" />
+    <ProjectReference Include="..\..\samples\GreetingMod\GreetingMod.csproj" ReferenceOutputAssembly="false" Private="false" />
+  </ItemGroup>
+
+  <Target Name="StageSampleMods" AfterTargets="Build">
+    <ItemGroup>
+      <_CropBonusFiles Include="..\..\samples\CropBonusMod\bin\$(Configuration)\$(TargetFramework)\**\*.*" />
+      <_GreetingModFiles Include="..\..\samples\GreetingMod\bin\$(Configuration)\$(TargetFramework)\**\*.*" />
+      <_ExtraCropsPackFiles Include="..\..\samples\ExtraCropsPack\**\*.*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(_CropBonusFiles)" DestinationFolder="$(OutDir)Mods\CropBonusMod\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_GreetingModFiles)" DestinationFolder="$(OutDir)Mods\GreetingMod\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_ExtraCropsPackFiles)" DestinationFolder="$(OutDir)Mods\ExtraCropsPack\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

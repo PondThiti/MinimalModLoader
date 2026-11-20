@@ -1,0 +1,10 @@
+{
+  "UniqueID": "Minimal.CropBonusMod",
+  "Name": "Crop Bonus Mod",
+  "Author": "MinimalModLoader Demo",
+  "Version": "1.0.0",
+  "Description": "Adds custom crops, loads Crop Content Packs, applies a Harmony sell-price multiplier, and exposes an inter-mod API.",
+  "MinimumLoaderVersion": "1.0.0",
+  "EntryDll": "CropBonusMod.dll",
+  "Dependencies": []
+}

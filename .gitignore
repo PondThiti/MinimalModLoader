@@ -1,0 +1,42 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+artifacts/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# IDE / Editor files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Local runtime / user-specific files
+game-locator.json
+*.log
+
+# Never commit external game archives or APKs into this repository
+*.apk
+*.apks
+*.xapk

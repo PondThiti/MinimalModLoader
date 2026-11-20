@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MinimalModLoader.Abstractions\MinimalModLoader.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\MinimalModLoader.Core\MinimalModLoader.Core.csproj" />
+    <ProjectReference Include="..\..\src\MinimalModLoader.GameHost\MinimalModLoader.GameHost.csproj" />
+    <ProjectReference Include="..\..\samples\CropBonusMod\CropBonusMod.csproj" ReferenceOutputAssembly="false" Private="false" />
+    <ProjectReference Include="..\..\samples\GreetingMod\GreetingMod.csproj" ReferenceOutputAssembly="false" Private="false" />
+  </ItemGroup>
+
+  <Target Name="StageSampleModsForTests" AfterTargets="Build">
+    <ItemGroup>
+      <_TestCropBonusFiles Include="..\..\samples\CropBonusMod\bin\$(Configuration)\$(TargetFramework)\**\*.*" />
+      <_TestGreetingModFiles Include="..\..\samples\GreetingMod\bin\$(Configuration)\$(TargetFramework)\**\*.*" />
+      <_TestExtraCropsPackFiles Include="..\..\samples\ExtraCropsPack\**\*.*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(_TestCropBonusFiles)" DestinationFolder="$(OutDir)TestMods\CropBonusMod\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_TestGreetingModFiles)" DestinationFolder="$(OutDir)TestMods\GreetingMod\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_TestExtraCropsPackFiles)" DestinationFolder="$(OutDir)TestMods\ExtraCropsPack\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

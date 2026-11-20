@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>CropBonusMod</RootNamespace>
+    <AssemblyName>CropBonusMod</AssemblyName>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Exclude host & shared assemblies from runtime output so the loader provides them from Default ALC -->
+    <ProjectReference Include="..\..\src\MinimalModLoader.Abstractions\MinimalModLoader.Abstractions.csproj">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\MinimalModLoader.GameHost\MinimalModLoader.GameHost.csproj">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </ProjectReference>
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

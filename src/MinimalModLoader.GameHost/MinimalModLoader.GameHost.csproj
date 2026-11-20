@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>MinimalModLoader.GameHost</RootNamespace>
+    <AssemblyName>MinimalModLoader.GameHost</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinimalModLoader.Abstractions\MinimalModLoader.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

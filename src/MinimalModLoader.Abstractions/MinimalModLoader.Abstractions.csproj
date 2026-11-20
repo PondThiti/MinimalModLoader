@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>MinimalModLoader.Abstractions</RootNamespace>
+    <AssemblyName>MinimalModLoader.Abstractions</AssemblyName>
+  </PropertyGroup>
+</Project>

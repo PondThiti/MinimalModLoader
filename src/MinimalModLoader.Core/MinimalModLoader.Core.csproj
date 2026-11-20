@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>MinimalModLoader.Core</RootNamespace>
+    <AssemblyName>MinimalModLoader.Core</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinimalModLoader.Abstractions\MinimalModLoader.Abstractions.csproj" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+  </ItemGroup>
+</Project>

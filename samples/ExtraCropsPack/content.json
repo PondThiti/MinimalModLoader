@@ -1,0 +1,16 @@
+{
+  "Crops": [
+    {
+      "Id": "AncientFruit",
+      "DisplayName": "Ancient Fruit (Content Pack)",
+      "BasePrice": 550,
+      "DaysToGrow": 28
+    },
+    {
+      "Id": "SweetGemBerry",
+      "DisplayName": "Sweet Gem Berry (Content Pack)",
+      "BasePrice": 3000,
+      "DaysToGrow": 24
+    }
+  ]
+}
